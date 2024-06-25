@@ -1,5 +1,5 @@
 import { colors } from "@/styles/colors";
-import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
 export default function TabLayout() {
@@ -21,7 +21,7 @@ export default function TabLayout() {
         name="index"
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" color={color} size={size} />
+            <FontAwesome name="home" color={color} size={size} />
           ),
         }}
       />
@@ -29,11 +29,7 @@ export default function TabLayout() {
         name="favorites"
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="bookmark-box-multiple-outline"
-              color={color}
-              size={size}
-            />
+            <FontAwesome name="book" color={color} size={size} />
           ),
         }}
       />
@@ -41,7 +37,7 @@ export default function TabLayout() {
         name="about"
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person-outline" color={color} size={size} />
+            <FontAwesome name="user" color={color} size={size} />
           ),
         }}
       />
