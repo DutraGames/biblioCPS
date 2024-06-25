@@ -42,12 +42,12 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.red[500],
+    backgroundColor: colors.red[700],
   },
 
   header: {
     flex: 1,
-    backgroundColor: colors.red[500],
+    backgroundColor: colors.red[700],
     justifyContent: "center",
     alignItems: "center",
   },
