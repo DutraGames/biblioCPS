@@ -29,7 +29,7 @@ export default function Layout() {
     RobotoSlab_700Bold,
   });
 
-  if (!fontsLoadedR && !fontsLoadedRS) return <Loading />;
+  if (!fontsLoadedR || !fontsLoadedRS) return <Loading />;
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <StatusBar barStyle="dark-content" />
