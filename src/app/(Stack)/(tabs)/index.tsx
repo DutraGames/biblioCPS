@@ -1,14 +1,21 @@
 import { colors } from "@/styles/colors";
 import { fontFamily } from "@/styles/fonts/fontFamily";
 import { fontSize } from "@/styles/fonts/fontSize";
-import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  FlatList,
+} from "react-native";
 
 import { FontAwesome } from "@expo/vector-icons";
 import { Input } from "@/components/input";
-import { FlatList } from "react-native-gesture-handler";
 import { bannerData } from "@/data/bannerdata";
 import BannerCarrossel from "@/components/bannerCarrossel";
 import Carousel from "react-native-reanimated-carousel";
+import Separator from "@/components/separator";
 
 export default function Home() {
   const _WIDTHSCREEN = Dimensions.get("screen").width;
@@ -47,6 +54,8 @@ export default function Home() {
           renderItem={({ item }) => <BannerCarrossel item={item} />}
         />
       </View>
+
+      <Separator />
     </ScrollView>
   );
 }
