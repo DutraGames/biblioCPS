@@ -4,14 +4,12 @@ import { loginAction } from "@/functions/auth";
 import { colors } from "@/styles/colors";
 import { fontFamily } from "@/styles/fonts/fontFamily";
 import { fontSize } from "@/styles/fonts/fontSize";
-import { View, Text, StyleSheet } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 export default function Login() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>BiblioCPS</Text>
-        <Text style={styles.subTitle}>Consulte o acervo</Text>
+        <Image source={require("../../imgs/logo.png")} style={styles.logo} />
       </View>
       <View style={styles.body}>
         <Text style={styles.titleBody}>Bem-vindo de volta</Text>
@@ -33,7 +31,9 @@ export default function Login() {
           onPress={() => loginAction("admin@admin.com", "admin")}
         />
 
-        <Text style={styles.textInfo}>Esqueceu sua senha?</Text>
+        <TouchableOpacity style={styles.butoonInfo}>
+          <Text style={styles.textInfo}>Esqueceu sua senha?</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -52,27 +52,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  logo: {
+    width: 300,
+    height: 100,
+    objectFit: "contain",
+  },
+
   body: {
     flex: 2,
-    backgroundColor: colors.white,
+    backgroundColor: colors.silver,
     justifyContent: "center",
-    alignItems: "center",
     borderWidth: 1,
     borderColor: colors.red[500],
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    paddingHorizontal: 32,
-  },
-
-  title: {
-    color: colors.white,
-    fontSize: fontSize["4xl"],
-    fontFamily: fontFamily.roboto.bold,
-  },
-  subTitle: {
-    color: colors.white,
-    fontSize: fontSize.lg,
-    fontFamily: fontFamily.roboto.bold,
+    paddingHorizontal: 20,
   },
 
   titleBody: {
@@ -86,10 +80,14 @@ const styles = StyleSheet.create({
     fontSize: fontSize.md,
     fontFamily: fontFamily.robotoSlab.regular,
   },
+
+  butoonInfo: {
+    marginTop: 16,
+  },
   textInfo: {
     color: colors.red[500],
     fontSize: fontSize.xs,
-    marginTop: 16,
     fontFamily: fontFamily.robotoSlab.semiBold,
+    textAlign: "center",
   },
 });
