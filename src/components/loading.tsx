@@ -5,7 +5,7 @@ export function Loading() {
     <View
       style={{
         flex: 1,
-        backgroundColor: colors.red[500],
+        backgroundColor: colors.red[700],
         justifyContent: "center",
         alignItems: "center",
       }}
@@ -13,7 +13,7 @@ export function Loading() {
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Image
           source={require("../imgs/logo.png")}
-          style={{ width: 300, height: 100, objectFit: "contain" }}
+          style={{ width: 210, height: 60, objectFit: "contain" }}
         />
       </View>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>

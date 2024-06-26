@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 300,
-    height: 100,
+    width: 210,
+    height: 60,
     objectFit: "contain",
   },
 
