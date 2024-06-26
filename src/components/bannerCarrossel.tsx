@@ -36,7 +36,7 @@ export default function BannerCarrossel({ item }: BannerCarrosselProps) {
       <View style={{ flex: 1, padding: 12 }}>
         <Image
           source={{ uri: item.image }}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
       </View>
     </View>
