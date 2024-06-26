@@ -1,14 +1,17 @@
 export const bannerData = [
   {
     id: 1,
-    image: "https://m.media-amazon.com/images/I/71dH97FwGbL._SY385_.jpg",
+    bgImage: require("../imgs/bg-banner1.jpg"),
+    image: require("../imgs/livro1.png"),
   },
   {
     id: 2,
-    image: "https://m.media-amazon.com/images/I/616V-DRk8aL._SY466_.jpg",
+    bgImage: require("../imgs/bg-banner2.jpg"),
+    image: require("../imgs/livro2.png"),
   },
   {
     id: 3,
-    image: "https://m.media-amazon.com/images/I/71Vkg7GfPFL._SY425_.jpg",
+    bgImage: require("../imgs/bg-banner3.jpg"),
+    image: require("../imgs/livro3.png"),
   },
 ];

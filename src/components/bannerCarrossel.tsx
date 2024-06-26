@@ -6,6 +6,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 type BannerCarrosselProps = {
   item: {
     id: number;
+    bgImage: string;
     image: string;
   };
 };
@@ -14,7 +15,7 @@ export default function BannerCarrossel({ item }: BannerCarrosselProps) {
   return (
     <View key={item.id} style={styles.container}>
       <Image
-        source={require("../imgs/bg-banner.jpg")}
+        source={item.bgImage}
         style={{
           width: "100%",
           height: "100%",
@@ -35,7 +36,7 @@ export default function BannerCarrossel({ item }: BannerCarrosselProps) {
       </View>
       <View style={{ flex: 1, padding: 12 }}>
         <Image
-          source={{ uri: item.image }}
+          source={item.image}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
       </View>
