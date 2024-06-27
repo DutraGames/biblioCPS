@@ -8,6 +8,7 @@ import {
   ScrollView,
   Dimensions,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 
 import { FontAwesome } from "@expo/vector-icons";
@@ -16,6 +17,8 @@ import { bannerData } from "@/data/bannerdata";
 import BannerCarrossel from "@/components/bannerCarrossel";
 import Carousel from "react-native-reanimated-carousel";
 import Separator from "@/components/separator";
+import CardBook from "@/components/cardBook";
+import { cardBookData } from "@/data/cardBookData";
 
 export default function Home() {
   const _WIDTHSCREEN = Dimensions.get("screen").width;
@@ -55,7 +58,157 @@ export default function Home() {
         />
       </View>
 
-      <Separator />
+      <View style={styles.category}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.cartegoryText}>Tech</Text>
+          <TouchableOpacity
+            style={{
+              flexDirection: "row",
+              gap: 8,
+              alignItems: "center",
+            }}
+          >
+            <Text
+              style={{
+                color: colors.red[500],
+                fontFamily: fontFamily.roboto.regular,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              Saiba Mais
+            </Text>
+            <Text>
+              <FontAwesome
+                name="angle-right"
+                size={24}
+                color={colors.red[500]}
+                style={{ position: "absolute", right: 16, top: 12 }}
+              />
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <FlatList
+          data={cardBookData}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => <CardBook item={item} />}
+        />
+      </View>
+      <View style={styles.category}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.cartegoryText}>Comex</Text>
+          <TouchableOpacity
+            style={{
+              flexDirection: "row",
+              gap: 8,
+              alignItems: "center",
+            }}
+          >
+            <Text
+              style={{
+                color: colors.red[500],
+                fontFamily: fontFamily.roboto.regular,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              Saiba Mais
+            </Text>
+            <Text>
+              <FontAwesome
+                name="angle-right"
+                size={24}
+                color={colors.red[500]}
+                style={{ position: "absolute", right: 16, top: 12 }}
+              />
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <FlatList
+          data={cardBookData}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => <CardBook item={item} />}
+        />
+      </View>
+      <View style={styles.category}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.cartegoryText}>Processos Químicos</Text>
+          <TouchableOpacity
+            style={{
+              flexDirection: "row",
+              gap: 8,
+              alignItems: "center",
+            }}
+          >
+            <Text
+              style={{
+                color: colors.red[500],
+                fontFamily: fontFamily.roboto.regular,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              Saiba Mais
+            </Text>
+            <Text>
+              <FontAwesome
+                name="angle-right"
+                size={24}
+                color={colors.red[500]}
+                style={{ position: "absolute", right: 16, top: 12 }}
+              />
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <FlatList
+          data={cardBookData}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => <CardBook item={item} />}
+        />
+      </View>
+
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 48,
+          marginBottom: 92,
+        }}
+      >
+        <TouchableOpacity
+          style={{
+            flexDirection: "row",
+            gap: 8,
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              color: colors.red[500],
+              fontFamily: fontFamily.roboto.regular,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Saiba Mais
+          </Text>
+          <Text>
+            <FontAwesome
+              name="angle-right"
+              size={24}
+              color={colors.red[500]}
+              style={{ position: "absolute", right: 16, top: 12 }}
+            />
+          </Text>
+        </TouchableOpacity>
+      </View>
     </ScrollView>
   );
 }
@@ -69,6 +222,7 @@ const styles = StyleSheet.create({
 
   header: {
     paddingHorizontal: 20,
+    flex: 1,
   },
 
   headerTop: {
@@ -92,5 +246,17 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.robotoSlab.bold,
     paddingBottom: 12,
     paddingHorizontal: 20,
+  },
+
+  category: {
+    paddingHorizontal: 20,
+    marginTop: 40,
+  },
+
+  cartegoryText: {
+    color: colors.blue[600],
+    fontSize: fontSize["lg"],
+    fontFamily: fontFamily.robotoSlab.bold,
+    marginBottom: 12,
   },
 });
